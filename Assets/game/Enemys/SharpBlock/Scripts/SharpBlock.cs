@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SkullGuy : MonoBehaviour
+public class SharpBlock : MonoBehaviour
 {
     [Header("GameObjects")]
     private Rigidbody2D rb;
