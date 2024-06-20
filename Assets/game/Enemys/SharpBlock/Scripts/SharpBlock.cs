@@ -10,15 +10,16 @@ public class SharpBlock : MonoBehaviour
     public Animator animator;
 
     [Header("Variables")]
-    public float speed = 0;
-    public float timeDelayOnHit = 1.0f;
-    public bool isMovingRight = true;
+    public float speed = 10;
+    public float timeDelayOnHit = 5.0f;
+    public bool isMovingRightOrUp = true;
+    public bool horizontal = true;
     bool isChangingDirection = false;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        animator.SetInteger("AnimSpeedDecider", isMovingRight ? 1 : -1);
+        animator.SetInteger("AnimSpeedDecider", isMovingRightOrUp ? 1 : -1);
     }
 
     void Update()
@@ -29,13 +30,27 @@ public class SharpBlock : MonoBehaviour
         }
         else
         {
-            if (isMovingRight && !isChangingDirection)
+            if (horizontal)
             {
-                rb.velocity = new Vector2(speed, rb.velocity.y);
+                if (isMovingRightOrUp && !isChangingDirection)
+                {
+                    rb.velocity = new Vector2(speed, rb.velocity.y);
+                }
+                else if (!isMovingRightOrUp && !isChangingDirection)
+                {
+                    rb.velocity = new Vector2(-speed, rb.velocity.y);
+                }
             }
-            else if (!isMovingRight && !isChangingDirection)
+            else
             {
-                rb.velocity = new Vector2(-speed, rb.velocity.y);
+                if (isMovingRightOrUp && !isChangingDirection)
+                {
+                    rb.velocity = new Vector2(rb.velocity.x, speed);
+                }
+                else if (!isMovingRightOrUp && !isChangingDirection)
+                {
+                    rb.velocity = new Vector2(rb.velocity.x, -speed);
+                }
             }
         }
     }
@@ -47,7 +62,7 @@ public class SharpBlock : MonoBehaviour
             StartCoroutine(ChangeDirection());
             audioSource.Play();
         }
-        
+
         if (collision.gameObject.CompareTag("Player"))
         {
             LevelMgr.killPlayer = true;
@@ -58,13 +73,13 @@ public class SharpBlock : MonoBehaviour
     {
         isChangingDirection = true;
         rb.velocity = Vector2.zero;
-        
-        yield return new WaitForSeconds(timeDelayOnHit/2);
 
-        isMovingRight = !isMovingRight;
-        animator.SetInteger("AnimSpeedDecider", isMovingRight ? 1 : -1);
+        yield return new WaitForSeconds(timeDelayOnHit / 2);
 
-        yield return new WaitForSeconds(timeDelayOnHit/2);
+        isMovingRightOrUp = !isMovingRightOrUp;
+        animator.SetInteger("AnimSpeedDecider", isMovingRightOrUp ? 1 : -1);
+
+        yield return new WaitForSeconds(timeDelayOnHit / 2);
         isChangingDirection = false;
     }
 }

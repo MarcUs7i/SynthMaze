@@ -2641,8 +2641,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 406194642}
   animator: {fileID: 406194637}
-  speed: 5
-  timeDelayOnHit: 1
+  speed: 10
+  timeDelayOnHit: 5
   isMovingRight: 0
 --- !u!1 &417760883
 GameObject:
