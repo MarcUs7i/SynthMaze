@@ -6,7 +6,6 @@ public class SkullGuy : MonoBehaviour
 {
     [Header("GameObjects")]
     private Rigidbody2D rb;
-    public AudioSource audioSource;
     public Animator animator;
 
     [Header("Variables")]
@@ -45,7 +44,6 @@ public class SkullGuy : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             StartCoroutine(ChangeDirection());
-            audioSource.Play();
         }
         
         if (collision.gameObject.CompareTag("Player"))
