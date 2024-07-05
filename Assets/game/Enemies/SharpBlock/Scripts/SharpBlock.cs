@@ -10,7 +10,7 @@ public class SharpBlock : MonoBehaviour
 
     [Header("Variables")]
     public float speed = 10;
-    public float timeDelayOnHit = 5.0f;
+    public float timeDelayOnHit = 3.0f;
     public bool isMovingRightOrUp = true;
     public bool horizontal = true;
     bool isChangingDirection = false;

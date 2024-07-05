@@ -2542,12 +2542,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 734179d4d7ad3314cbf982dbc559d45b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
   animator: {fileID: 406194637}
   speed: 10
-  timeDelayOnHit: 5
+  timeDelayOnHit: 3
   isMovingRightOrUp: 1
-  horizontal: 1
+  horizontal: 0
 --- !u!1 &417760883
 GameObject:
   m_ObjectHideFlags: 0
