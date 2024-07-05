@@ -90,6 +90,16 @@ public class PlayerMove : MonoBehaviour
 				animator.SetBool("IsJumping", true);
 			}*/
 
+            if(StopMoving)
+            {
+                rb2d.constraints = RigidbodyConstraints2D.FreezeAll;
+                RunningAnimation = false;
+            }
+            else
+            {
+                rb2d.constraints = RigidbodyConstraints2D.FreezeRotation;
+            }
+
             if(rb2d.velocity == Vector2.zero && CameraController.CameraPlayer == true && StopMoving == false)
             {
                 if(verticalInput > 0)
