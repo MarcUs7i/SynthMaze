@@ -33,7 +33,7 @@ public class PlayerMove : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D c2d)
     {
-        if (c2d.gameObject.CompareTag("Ground"))
+        if (c2d.gameObject.CompareTag("Ground") || c2d.gameObject.CompareTag("Enemy"))
         {
             touched++;
             //Debug.Log("Touched: " + touched);

@@ -67,6 +67,14 @@ public class SharpBlock : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter2D(Collider2D c2d)
+    {
+        if (c2d.CompareTag("Player"))
+        {
+            LevelMgr.killPlayer = true;
+        }
+    }
+
     IEnumerator ChangeDirection()
     {
         isChangingDirection = true;
