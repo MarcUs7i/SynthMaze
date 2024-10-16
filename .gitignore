@@ -1,5 +1,7 @@
-/Library/
-/Temp/
-/Logs/
-.plastic/
-Layouts/
+Library/
+Temp/
+Logs/
+
+.vsconfig
+*.csproj
+*.sln
