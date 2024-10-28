@@ -1,6 +1,8 @@
 Library/
 Temp/
 Logs/
+UserSettings/
+.plastic/
 
 .vsconfig
 *.csproj
