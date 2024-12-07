@@ -25,7 +25,7 @@ public class SharpBlock : MonoBehaviour
     {
         if (Pause.IsPause)
         {
-            rb.velocity = Vector2.zero;
+            rb.linearVelocity = Vector2.zero;
         }
         else
         {
@@ -33,22 +33,22 @@ public class SharpBlock : MonoBehaviour
             {
                 if (isMovingRightOrUp && !isChangingDirection)
                 {
-                    rb.velocity = new Vector2(speed, rb.velocity.y);
+                    rb.linearVelocity = new Vector2(speed, rb.linearVelocity.y);
                 }
                 else if (!isMovingRightOrUp && !isChangingDirection)
                 {
-                    rb.velocity = new Vector2(-speed, rb.velocity.y);
+                    rb.linearVelocity = new Vector2(-speed, rb.linearVelocity.y);
                 }
             }
             else
             {
                 if (isMovingRightOrUp && !isChangingDirection)
                 {
-                    rb.velocity = new Vector2(rb.velocity.x, speed);
+                    rb.linearVelocity = new Vector2(rb.linearVelocity.x, speed);
                 }
                 else if (!isMovingRightOrUp && !isChangingDirection)
                 {
-                    rb.velocity = new Vector2(rb.velocity.x, -speed);
+                    rb.linearVelocity = new Vector2(rb.linearVelocity.x, -speed);
                 }
             }
         }
@@ -78,7 +78,7 @@ public class SharpBlock : MonoBehaviour
     IEnumerator ChangeDirection()
     {
         isChangingDirection = true;
-        rb.velocity = Vector2.zero;
+        rb.linearVelocity = Vector2.zero;
 
         yield return new WaitForSeconds(timeDelayOnHit / 2);
 

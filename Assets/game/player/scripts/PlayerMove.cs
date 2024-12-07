@@ -100,7 +100,7 @@ public class PlayerMove : MonoBehaviour
                 rb2d.constraints = RigidbodyConstraints2D.FreezeRotation;
             }
 
-            if(rb2d.velocity == Vector2.zero && CameraController.CameraPlayer == true && StopMoving == false)
+            if(rb2d.linearVelocity == Vector2.zero && CameraController.CameraPlayer == true && StopMoving == false)
             {
                 if(verticalInput > 0)
                 {
@@ -161,7 +161,7 @@ public class PlayerMove : MonoBehaviour
 
     public void PlayerUP()
     {
-        if(rb2d.velocity == Vector2.zero && CameraController.CameraPlayer == true && StopMoving == false)
+        if(rb2d.linearVelocity == Vector2.zero && CameraController.CameraPlayer == true && StopMoving == false)
         {
             Physics2D.gravity = Vector2.up * gravity;
     
@@ -190,7 +190,7 @@ public class PlayerMove : MonoBehaviour
 
     public void PlayerDown()
     {
-        if(rb2d.velocity == Vector2.zero && CameraController.CameraPlayer == true && StopMoving == false)
+        if(rb2d.linearVelocity == Vector2.zero && CameraController.CameraPlayer == true && StopMoving == false)
         {
             Physics2D.gravity = Vector2.down * gravity;
     
@@ -218,7 +218,7 @@ public class PlayerMove : MonoBehaviour
 
     public void PlayerLeft()
     {
-        if(rb2d.velocity == Vector2.zero && CameraController.CameraPlayer == true && StopMoving == false)
+        if(rb2d.linearVelocity == Vector2.zero && CameraController.CameraPlayer == true && StopMoving == false)
         {
             Physics2D.gravity = Vector2.left * gravity;
     
@@ -246,7 +246,7 @@ public class PlayerMove : MonoBehaviour
 
     public void PlayerRight()
     {
-        if(rb2d.velocity == Vector2.zero && CameraController.CameraPlayer == true && StopMoving == false)
+        if(rb2d.linearVelocity == Vector2.zero && CameraController.CameraPlayer == true && StopMoving == false)
         {
             Physics2D.gravity = Vector2.right * gravity;
     

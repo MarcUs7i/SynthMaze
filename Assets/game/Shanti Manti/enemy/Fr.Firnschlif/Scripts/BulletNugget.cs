@@ -14,11 +14,11 @@ public class BulletNugget : MonoBehaviour
     {
         if (Firnschliff.BulletNuggetDirection == 0f)
         {
-            rb.velocity = -transform.right * speed;
+            rb.linearVelocity = -transform.right * speed;
         }
         if (Firnschliff.BulletNuggetDirection == 1f)
         {
-            rb.velocity = transform.right * speed;
+            rb.linearVelocity = transform.right * speed;
         }
     }
 

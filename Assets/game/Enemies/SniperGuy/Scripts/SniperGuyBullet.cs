@@ -13,11 +13,11 @@ public class SniperGuyBullet : MonoBehaviour
     {
         if (SniperGuy.BulletDirection == 0f)
         {
-            rb.velocity = -transform.right * speed;
+            rb.linearVelocity = -transform.right * speed;
         }
         if (SniperGuy.BulletDirection == 1f)
         {
-            rb.velocity = transform.right * speed;
+            rb.linearVelocity = transform.right * speed;
         }
     }
 

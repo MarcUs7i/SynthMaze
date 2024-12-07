@@ -16,12 +16,12 @@ public class BulletAng : MonoBehaviour
     {
         if (Aleksei.BulletAngDirection == 0f)
         {
-            rb.velocity = -transform.right * speed;
+            rb.linearVelocity = -transform.right * speed;
             transform.rotation = Quaternion.Euler(desiredRotation0);
         }
         if (Aleksei.BulletAngDirection == 1f)
         {
-            rb.velocity = transform.right * speed;
+            rb.linearVelocity = transform.right * speed;
             transform.rotation = Quaternion.Euler(desiredRotation1);
         }
     }

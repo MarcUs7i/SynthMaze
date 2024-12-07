@@ -14,11 +14,11 @@ public class BulletKim : MonoBehaviour
     {
         if (Kimberley.BulletKimDirection == 0f)
         {
-            rb.velocity = -transform.right * speed;
+            rb.linearVelocity = -transform.right * speed;
         }
         if (Kimberley.BulletKimDirection == 1f)
         {
-            rb.velocity = transform.right * speed;
+            rb.linearVelocity = transform.right * speed;
         }
     }
 

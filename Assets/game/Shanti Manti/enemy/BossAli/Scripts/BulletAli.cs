@@ -17,12 +17,12 @@ public class BulletAli : MonoBehaviour
         Vector3 newScale = transform.localScale;
         if (Ali.BulletAliDirection == 0f)
         {
-            rb.velocity = -transform.right * speed;
+            rb.linearVelocity = -transform.right * speed;
             newScale.x *= -1; // Flipping along the X-axis
         }
         if (Ali.BulletAliDirection == 1f)
         {
-            rb.velocity = transform.right * speed;
+            rb.linearVelocity = transform.right * speed;
         }
         transform.localScale = newScale;
     }

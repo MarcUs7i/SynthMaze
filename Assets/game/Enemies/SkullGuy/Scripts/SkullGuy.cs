@@ -24,17 +24,17 @@ public class SkullGuy : MonoBehaviour
     {
         if (Pause.IsPause)
         {
-            rb.velocity = Vector2.zero;
+            rb.linearVelocity = Vector2.zero;
         }
         else
         {
             if (isMovingRight && !isChangingDirection)
             {
-                rb.velocity = new Vector2(speed, rb.velocity.y);
+                rb.linearVelocity = new Vector2(speed, rb.linearVelocity.y);
             }
             else if (!isMovingRight && !isChangingDirection)
             {
-                rb.velocity = new Vector2(-speed, rb.velocity.y);
+                rb.linearVelocity = new Vector2(-speed, rb.linearVelocity.y);
             }
         }
     }
@@ -55,7 +55,7 @@ public class SkullGuy : MonoBehaviour
     IEnumerator ChangeDirection()
     {
         isChangingDirection = true;
-        rb.velocity = Vector2.zero;
+        rb.linearVelocity = Vector2.zero;
         
         yield return new WaitForSeconds(timeDelayOnHit/2);
 

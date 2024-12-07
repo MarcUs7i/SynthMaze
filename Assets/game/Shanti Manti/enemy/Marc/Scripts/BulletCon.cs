@@ -14,11 +14,11 @@ public class BulletCon : MonoBehaviour
     {
         if (Marc.BulletConDirection == 0f)
         {
-            rb.velocity = -transform.right * speed;
+            rb.linearVelocity = -transform.right * speed;
         }
         if (Marc.BulletConDirection == 1f)
         {
-            rb.velocity = transform.right * speed;
+            rb.linearVelocity = transform.right * speed;
         }
     }
 

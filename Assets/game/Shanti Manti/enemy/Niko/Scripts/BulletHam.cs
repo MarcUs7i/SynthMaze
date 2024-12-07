@@ -14,11 +14,11 @@ public class BulletHam : MonoBehaviour
     {
         if (Niko.BulletHamDirection == 0f)
         {
-            rb.velocity = -transform.right * speed;
+            rb.linearVelocity = -transform.right * speed;
         }
         if (Niko.BulletHamDirection == 1f)
         {
-            rb.velocity = transform.right * speed;
+            rb.linearVelocity = transform.right * speed;
         }
     }
 
